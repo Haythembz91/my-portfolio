@@ -8,10 +8,10 @@ const IntroSection = ()=>{
                     <img src={headshot.src} className='img-fluid rounded-circle' alt='headshot'></img>
                 </div>
                 <div className='col p-2 align-self-center'>
-                    <h3 className='h3 text-muted'>Hi i'm</h3>
+                    <h3 className='h3 text-muted'>Hi i&apos;m</h3>
                     <h1 className='textShadow'>Haythem Ben Zaied</h1>
                     <p className='py-3 text-muted'>
-                        I'm a full-stack web developer with a passion for building modern, responsive web apps.
+                        I&apos;m a full-stack web developer with a passion for building modern, responsive web apps.
                         I specialize in React, TypeScript, Next.js, and backend tools like Express, MongoDB, and PostgreSQL.
                         I love turning ideas into real, functional digital experiences.
                     </p>
