@@ -1,15 +1,16 @@
-import Header from "@/components/Header"
+import ContactMe from "@/components/Contact"
 import IntroSection from "@/components/IntroSection"
+import ProjectsContainer from "@/components/ProjectsContainer"
+import SkillsSection from "@/components/SkillsSection"
 
 const Home = ()=>{
     return(
-        <div>
-            <Header></Header>
-            <main>
+            <main className="container-fluid">
                 <IntroSection></IntroSection>
-                <h1>Ania Kubow</h1>
+                <SkillsSection></SkillsSection>
+                <ProjectsContainer></ProjectsContainer>
+                <ContactMe></ContactMe>
             </main>
-        </div>
     )
 }
 
