@@ -5,3 +5,8 @@ export interface Project{
     github:string,
     live:string
 }
+
+export interface Message {
+    message?: string,
+    error?: string
+}

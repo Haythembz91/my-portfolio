@@ -1,12 +1,45 @@
 'use client'
 import Link from 'next/link'
 import React from 'react'
+import { Message } from '../utils/interfaces'
 
 const ContactMe = ()=>{
 
-  const handleSubmit = (e:React.FormEvent<HTMLFormElement>)=>{
+  const [isLoading, setIsLoading] = React.useState(false)
+  const [error,setError] = React.useState('')
+  const [message,setMessage] = React.useState<Message>({})
+  const formRef = React.useRef<HTMLFormElement>(null)
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
-    console.log('Submitted')
+    setIsLoading(true)
+    setError('')
+    setMessage({})
+    const formData = new FormData(e.currentTarget)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+    if(!name || !email || !message){
+      setError('All fields are required')
+      setIsLoading(false)
+      return null
+    }
+    try{
+      const response = await fetch('/api/contact',{
+        method:'POST',
+        body: formData
+      })
+      if(response.ok){
+        const data = await response.json()
+        setMessage(data)
+        if(data.message){
+          formRef.current?.reset()
+        }
+      }
+    }catch(e){
+      console.log(e)
+    }finally{
+      setIsLoading(false)
+    }
   }
 
 
@@ -36,7 +69,7 @@ const ContactMe = ()=>{
       </ul>
       <div className='text-center mb-3'>Or: </div>
       <div className='col-md-6 mx-auto'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} ref={formRef}>
           <div className='form-floating mb-3'>
             <input id='name' name='name' className='form-control' type='text' placeholder='Your name'></input>
             <label htmlFor='name'>Name</label>
@@ -48,10 +81,19 @@ const ContactMe = ()=>{
           <div className='mb-3'>
             <textarea id='message' name='message' className='form-control' placeholder='Your message' rows={5}></textarea>
           </div>
+          {error?<div className='alert alert-danger mb-3'>{error}</div>:null}
           <div className='mb-3'>
-            <button type='submit' className='btn btn-outline-dark w-100'>Submit</button>
+            {!isLoading?<button type='submit' className='btn btn-outline-dark w-100'>Submit</button>:
+            <button className="btn btn-outline-dark w-100" type="button" disabled>
+              <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+              <span className='px-2' role="status">Sending...</span>
+            </button>}
           </div>
         </form>
+        <div className='mb-3'>
+          {message.message?<div className='alert alert-success mb-3 text-center'>{message.message}</div>:message.error&&
+          <div className='alert alert-danger mb-3 text-center'>{message.error}</div>}
+        </div>
       </div>
     </section>
   )
