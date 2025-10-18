@@ -3,6 +3,13 @@ import { Project } from "./interfaces"
 
 export const projects:Project[] = [
     {
+        name:'EBHC - Entreprise Ben Hammed de Construction',
+        description:'I made a landing page for a contractor company using Nextjs',
+        stacks:['NextJS', 'Tailwind','JavaScript', 'TypeScript', 'Resend'],
+        github:'https://github.com/Haythembz91/ebhc_landing_page',
+        live:'https://www.ebhc.tn'
+    },
+    {
         name:'Next Ecommerce App',
         description:'I made an ecommerce app using NextJS, Stripe for payment',
         stacks:['NextJS', 'Bootstrap','JavaScript', 'TypeScript', 'Stripe', 'Mongodb','AuthO','JWT','Bcrypt','Cloudinary'],
