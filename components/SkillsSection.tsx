@@ -1,13 +1,15 @@
 import React from "react";
 import {
-  FaNodeJs, FaDatabase, FaTools,
+  FaNodeJs, FaDatabase, FaTools, FaJava
 } from "react-icons/fa";
 import {
   SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
   SiVite, SiTailwindcss, SiBootstrap, SiStyledcomponents,
   SiExpress, SiJsonwebtokens, SiStripe,
-  SiMongodb, SiPostgresql, SiGit, SiGithub, SiVercel, SiRender,
+  SiMongodb, SiPostgresql, SiGit, SiGithub, SiVercel, SiRender, SiAngular, SiPython
 } from "react-icons/si";
+import { BiLogoSpringBoot } from "react-icons/bi";
+
 
 const skills = [
   {
@@ -18,6 +20,7 @@ const skills = [
       { name: "CSS", icon: <SiCss3 /> },
       { name: "JavaScript", icon: <SiJavascript /> },
       { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "Angular", icon: <SiAngular />},
       { name: "React", icon: <SiReact /> },
       { name: "Next.js", icon: <SiNextdotjs /> },
       { name: "Vite", icon: <SiVite /> },
@@ -31,6 +34,9 @@ const skills = [
     icon: <FaNodeJs className="text-success me-2" />,
     items: [
       { name: "Express.js", icon: <SiExpress /> },
+      { name: "Spring Boot", icon: <BiLogoSpringBoot /> },
+      { name: "Java", icon: <FaJava /> },
+      { name: "Python", icon: <SiPython /> },
       { name: "Node.js", icon: <FaNodeJs /> },
       { name: "JWT Auth", icon: <SiJsonwebtokens /> },
       { name: "Stripe", icon: <SiStripe /> },

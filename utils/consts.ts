@@ -10,6 +10,13 @@ export const projects:Project[] = [
         live:'https://www.ebhc.tn'
     },
     {
+        name:'GameInventory Web App',
+        description:'I made a game inventory app using Angular and Spring Boot',
+        stacks:['Angular','Spring Boot','TypeScript', 'Java', 'mongodb', 'Cloudinary'],
+        github:'https://github.com/Haythembz91/game-inventory-ng-frontend',
+        live:''
+    },
+    {
         name:'Next Ecommerce App',
         description:'I made an ecommerce app using NextJS, Stripe for payment',
         stacks:['NextJS', 'Bootstrap','JavaScript', 'TypeScript', 'Stripe', 'Mongodb','AuthO','JWT','Bcrypt','Cloudinary'],
