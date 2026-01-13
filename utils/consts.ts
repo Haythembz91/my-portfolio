@@ -14,7 +14,7 @@ export const projects:Project[] = [
         description:'I made a game inventory app using Angular and Spring Boot',
         stacks:['Angular','Spring Boot','TypeScript', 'Java', 'mongodb', 'Cloudinary'],
         github:'https://github.com/Haythembz91/game-inventory-ng-frontend',
-        live:''
+        live:'https://github.com/Haythembz91/game-inventory-springboot-backend'
     },
     {
         name:'Next Ecommerce App',
