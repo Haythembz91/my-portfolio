@@ -16,19 +16,49 @@
   text-shadow: 2px 2px 4px #000, -2px -2px 4px #fff, 0 0 20px #2c2b2b ;
 }
 
+/* @property --angle{
+  syntax:"<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.projectCard::after , .projectCard::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: conic-gradient(from var(--angle),transparent 20%,rgb(41, 40, 40));
+  top:0%;
+  left: 0%;
+  z-index: -1;
+  animation: spin 3s linear infinite
+}
+.projectCard::before{
+  filter: blur(1.5rem);
+  opacity: 0.7;
+}
+
+@keyframes spin{
+  from{
+    --angle:0deg;
+  }
+  to{
+    --angle:360deg;
+  }
+} */
 
 .headshot {
     width: 300px;
     height: 300px;
     object-fit: cover;
 
-
+    /* Initial Shadow: Subtle dark grey/black glow */
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.5),
     0 0 50px rgba(100, 100, 100, 0.2);
 
     animation: morphAndGlow 10s infinite alternate ease-in-out;
 
-
+    /* Subtle grey border */
     border: 1px solid rgba(150, 150, 150, 0.3);
 }
 

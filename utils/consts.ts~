@@ -6,7 +6,7 @@ export const projects:Project[] = [
         name:'Project Management App',
         description:'I made a project management app using Nextjs',
         stacks:['NextJS', 'Bootstrap','JavaScript', 'TypeScript'],
-        github:'https://github.com/Haythembz91/project-management-app',
+        github:'https://github.com/Haythembz91/ebhc_landing_page',
         live:'https://project-management-app-three-murex.vercel.app/'
     },
     {
